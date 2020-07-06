@@ -1,7 +1,10 @@
 package InnerWorkByDi;
 /**
- * Created by Elio Yang on 2020/6/4.
+ * 反转单链表：
+ * 原链表：1-->2-->3
+ * 反转链表：3->2->1
  */
+
 public class ReverseList {
     static class Node{
         int data;
