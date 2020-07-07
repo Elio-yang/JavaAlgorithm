@@ -30,7 +30,7 @@ public class Fibonacci {
         }
     }
 
-    static Map<Integer, Integer> map = new HashMap();
+    static Map<Integer, Integer> map = new HashMap<>();
 
     public static int solve2(int n) {
         if (n <= 2) {

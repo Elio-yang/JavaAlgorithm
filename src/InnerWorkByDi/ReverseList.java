@@ -1,4 +1,5 @@
 package InnerWorkByDi;
+
 /**
  * 反转单链表：
  * 原链表：1-->2-->3
@@ -6,38 +7,39 @@ package InnerWorkByDi;
  */
 
 public class ReverseList {
-    static class Node{
-        int data;
-        Node next;
-    }
     public static void main(String[] args) {
-            Node n1=new Node();
-            Node n2=new Node();
-            Node n3=new Node();
-            Node head=new Node();
-            n1.data=1;
-            n1.next=n2;
-            n2.data=2;
-            n2.next=n3;
-            n3.data=3;
-            n3.next=null;
-            head.next=n1;
-
-            Node node=reverseList(n1);
-
-            while (node!=null){
-                System.out.println(node.data);
-                node=node.next;
-            }
+        node node1=new node(1);
+        node node2=new node(2);
+        node node3=new node(3);
+        node1.next=node2;
+        node2.next=node3;
+        node.Print(node1);
+        node newList=node.reserveList(node1);
+        node.Print(newList);
     }
-    public static Node reverseList(Node head){
-        if(head==null||head.next==null){
+}
+class node {
+    int data;
+    node next;
+    public node(int val){
+        data=val;
+        next=null;
+    }
+    public static node reserveList(node head){
+        if(head==null|| head.next==null){
             return head;
         }
-        Node newList = reverseList(head.next);
-        Node t1 = head.next;
-        t1.next = head;
-        head.next = null;
+        node newList=reserveList(head.next);
+        node tmp1=head.next;
+        tmp1.next=head;
+        head.next=null;
         return newList;
+    }
+    public static void Print(node head){
+        if(head==null){
+            return;
+        }
+        System.out.println(head.data);
+        Print(head.next);
     }
 }
